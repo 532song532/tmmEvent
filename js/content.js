@@ -1,11 +1,9 @@
 // mobile check
 const isMobile = function(e){
   try {
-    document.createEvent("TouchEvent");
-    console.log('a')
+    document.createEvent("TouchEvent");  
     return true;
   } catch (e) {
-    console.log('b')
     return false;
   }
 };
@@ -66,20 +64,20 @@ function fnturnOn() {
     let btnSaveImg = document.querySelector('#btnSaveToImg');
     if(enterImg.length > MINCOUNT-1){
       btnSaveImg.addEventListener(isTouch.click, saveImg);
-      btnSaveImg.classList.add('active')
+      // btnSaveImg.classList.add('active')
     }else{
       btnSaveImg.removeEventListener(isTouch.click, saveImg);
-      btnSaveImg.classList.remove('active')
+      // btnSaveImg.classList.remove('active')
     }
   }
 
 }
 
-function saveImg() {
-  html2canvas(document.querySelector("#capture")).then(canvas => {
-    let el = document.createElement('a');
-    el.href = canvas.toDataURL('images/jpeg')
-    el.download = 'tmm_MissionComplete.jpg'
-    el.click();
-  });
-}
+// function saveImg() {
+//   html2canvas(document.querySelector("#capture")).then(canvas => {
+//     let el = document.createElement('a');
+//     el.href = canvas.toDataURL('images/jpeg')
+//     el.download = 'tmm_MissionComplete.jpg'
+//     el.click();
+//   });
+// }

@@ -112,25 +112,14 @@ body{
 }
 
 .turnOn{
-  animation: turnOn 0.2s 3 ease-in-out both;
+  animation: turnOn 0.5s both;
 }
 @keyframes turnOn {
-  60%{
-    transform: rotateY(180deg);
+  0%{
+    opacity: 0;
   }
   0%, 100%{
-    transform: rotateY(0);
-  }
-}
-.turnOff{
-  animation: turnOff 1s ease-in-out both;
-}
-@keyframes turnOff {
-  0%{
-    transform: rotateY(180deg);
-  }
-  100%{
-    transform: rotateY(0deg);
+    opacity: 1;
   }
 }
 

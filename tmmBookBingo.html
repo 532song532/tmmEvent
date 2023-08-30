@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+  
+  <title>Make a BINGO !</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+
+  <div id="capture" style="padding: 10px; background: url('images/bg.png')0 0">
+    <div id="wrap">
+      <h3><img src="images/title.png" alt=""></h3>
+      <h3></h3>
+      
+      <div id="bingoBoard">
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span><div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+        <div class="item">
+          <input type="file"><span class="fileSelector"></span><span class="mission"></span> <div class="btnClose"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="btnSaveToImg">이미지로 저장하기</div>
+
+  <script>
+    const MISSION = ['모임 1회 참여','책 속의 한 줄','내 책장 소개','회비 납부','모임 개최 또는 <br>모임 2회 참여','독서관련 꿀템','모임 후기','독서하기 좋은 장소','책 추천(+이유)',];
+    const MINCOUNT = 6;
+  </script>
+  <script src="js/html2canvas.min.js"></script>
+  <script src="js/content.js"></script>
+</body>
+</html>

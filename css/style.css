@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Gowun Dodum', sans-serif; */
+  font-family: 'Black Han Sans', sans-serif;
+  /* font-family: 'Poor Story', cursive; */
+}
+body{
+  background: url('../images/bg.png') 0 0;
+}
+#wrap{
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+}
+#wrap h3{
+  text-align: center;
+}
+#wrap h3 img{
+  width: 95%;
+}
+
+#bingoBoard{
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
+  margin-top: -7px;
+}
+#bingoBoard .item{
+  position: relative;
+  left: 0;
+  width: 33.3%;
+  box-sizing: border-box;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-size: cover;
+  background-position: center;
+}
+#bingoBoard .item::after{
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.item:nth-child(even){
+  background-color: #eff3df;
+}
+.item:nth-child(odd){
+  background-color: #cdd;
+}
+
+.item input {
+  display: none;
+}
+.item .fileSelector{
+  position: absolute;
+  display: inline-block;
+  top: 5px;
+  width: 50%;
+  height: 22px;
+  border-radius: 7px;
+  padding: 0 5px;
+  color: #fff;
+  background-color: #1d3b45;
+  box-shadow: 1px 2px 1px rgba(55,10,20, 0.3);
+}
+.item .fileSelector::after{
+  content: "등록하기";
+  font-size: 13px;
+  
+  position: relative;
+  line-height: 25px;
+}
+.item.turnOn .fileSelector {
+  display: none;
+}
+.item .mission {
+  margin-top: 20px;
+  word-break: keep-all;
+}
+.item.turnOn .mission{
+  background-color: rgba(230, 230, 230, 0.7);
+  padding: 2px;
+  border-radius: 7%;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+}
+
+.btnClose {
+  display: none;
+  position: absolute;
+  top:5px;
+  right:5px;
+  width: 25px;
+  height: 25px;
+  z-index: 50;
+  background: url('../images/btn_close.png') center;
+  background-size: cover;
+  cursor: pointer;
+}
+.item.turnOn .btnClose {
+  display: block;
+}
+
+.turnOn{
+  animation: turnOn 0.2s 3 ease-in-out both;
+}
+@keyframes turnOn {
+  60%{
+    transform: rotateY(180deg);
+  }
+  0%, 100%{
+    transform: rotateY(0);
+  }
+}
+.turnOff{
+  animation: turnOff 1s ease-in-out both;
+}
+@keyframes turnOff {
+  0%{
+    transform: rotateY(180deg);
+  }
+  100%{
+    transform: rotateY(0deg);
+  }
+}
+
+#btnSaveToImg {
+  position: relative;
+  width: 50%;
+  max-width: 250px;
+  text-align: center;
+  margin: 10px auto;
+  padding:5px 10px;
+  color: #fff;
+  background-color: #1d3b45;
+  box-shadow: 1px 2px 1px rgba(55,10,20, 0.3);
+  border-radius: 5px;
+
+  filter:grayscale(1) opacity(0.8);
+  pointer-events: none;
+}
+#btnSaveToImg.active {
+  filter: none;
+  pointer-events: all;
+}

@@ -43,7 +43,7 @@ function fnturnOn() {
   reader.onload = () => {
     item.style.backgroundImage = `url('${reader.result}')`;
     item.classList.toggle('turnOn');
-    allowedBtn();
+    // allowedBtn();
   }
   if (file) {
     reader.readAsDataURL(file);
@@ -55,21 +55,21 @@ function fnturnOn() {
     item.style.backgroundImage = ``;
     item.classList.remove('turnOn');
     item.children[0].value = ''
-    allowedBtn();
+    // allowedBtn();
     
   }
 
-  function allowedBtn() {
-    let enterImg = document.querySelectorAll('.item.turnOn');
-    let btnSaveImg = document.querySelector('#btnSaveToImg');
-    if(enterImg.length > MINCOUNT-1){
-      btnSaveImg.addEventListener(isTouch.click, saveImg);
+  // function allowedBtn() {
+  //   let enterImg = document.querySelectorAll('.item.turnOn');
+  //   let btnSaveImg = document.querySelector('#btnSaveToImg');
+  //   if(enterImg.length > MINCOUNT-1){
+  //     btnSaveImg.addEventListener(isTouch.click, saveImg);
       // btnSaveImg.classList.add('active')
-    }else{
-      btnSaveImg.removeEventListener(isTouch.click, saveImg);
-      // btnSaveImg.classList.remove('active')
-    }
-  }
+  //   }else{
+  //     btnSaveImg.removeEventListener(isTouch.click, saveImg);
+  //     // btnSaveImg.classList.remove('active')
+  //   }
+  // }
 
 }
 
